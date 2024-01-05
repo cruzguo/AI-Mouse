@@ -33,10 +33,15 @@ while True:
                     thumb_x = screen_width/frame_width*x
                     thumb_y = screen_height/frame_height*y
                     print('outside', abs(index_y - thumb_y))
-                    if abs(index_y - thumb_y) < 75:
+                    if abs(index_y - thumb_y) < 10:
                         pyautogui.click()
                         pyautogui.sleep(1)
-                    if abs(index_y - thumb_y) > 150:
+                if id == 12:
+                    cv2.circle(img=frame, center=(x,y), radius=10, color=(0, 255, 255))
+                    middle_x = screen_width/frame_width*x
+                    middle_y = screen_height/frame_height*y
+                    print('outside', abs(index_y - middle_y))
+                    if abs(index_y - middle_y) < 10:
                         pyautogui.rightClick()
                         pyautogui.sleep(1)
 
